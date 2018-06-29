@@ -1,10 +1,10 @@
-A Blockchain Platform for the Enterprise
+엔터프라이즈를 위한 블록체인 플랫폼
 ========================================
 
 .. image:: images/hyperledger_fabric_logo_color.png
 
-Enterprise grade permissioned distributed ledger platform that offers
-modularity and versatility for a broad set of industry use cases.
+모듈 방식을 제공하고 산업 다방면에 쓰일 수 있는 엔터프라이즈 수준의 
+허가가 필요한 분산 원장(permissioned distributed ledger) 플랫폼 입니다.
 
 .. raw:: html
 
