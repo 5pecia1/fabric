@@ -1,44 +1,41 @@
-# Introduction
+# 소개
 
-In general terms, a blockchain is an immutable transaction ledger, maintained
-within a distributed network of _peer nodes_. These nodes each maintain a copy
-of the ledger by applying transactions that have been validated by a _consensus
-protocol_, grouped into blocks that include a hash that bind each block to the
-preceding block.
+일반적으로 블록체인은 피어 노드(peer node)들의 분산 네트워크로 유지되는 
+불변의 트랜잭션(transaction) 원장입니다. 이 노드들은 이전의 블록에 각각의 
+블록을 바인딩 하는 해시를 포함하는 그룹화된 합의 프로토콜에 의해 인증된 
+트랜잭션들을 사용함으로써 각각 원장의 복사본을 관리합니다.
 
-The first and most widely recognized application of blockchain is the
-[Bitcoin](https://en.wikipedia.org/wiki/Bitcoin) cryptocurrency, though others
-have followed in its footsteps. Ethereum, an alternative cryptocurrency, took a
-different approach, integrating many of the same characteristics as Bitcoin but
-adding _smart contracts_ to create a platform for distributed applications.
-Bitcoin and Ethereum fall into a class of blockchain that we would classify as
-_public permissionless_ blockchain technology.  Basically, these are public
-networks, open to anyone, where participants interact anonymously.
+첫 번째이자 가장 널리 알려진 블록체인의 활용 사례는 다른 사람들도 그 발자취를 
+따라가고 있는  [비트코인](https://en.wikipedia.org/wiki/Bitcoin) 가상화폐입니다.
+대안 가상화폐인 이더리움은 비트코인과 같은 특징들을 많이 통합하지만, 그와 더불어
+분산 애플리케이션을 위한 플랫폼을 만들기 위해 스마트 컨트랙트를 추가한 
+다른 접근 방식을 취했습니다. 비트코인과 이더리움은 허가가 필요없는 퍼블릭 
+블록체인(public permissionless blockchain) 기술이라고 분류됩니다. 기본적으로, 
+이들은 누구에게나 열려있고 참여자들이 익명으로 소통할 수 있는 퍼블릭 
+네트워크입니다. 
 
-As the popularity of Bitcoin, Ethereum and a few other derivative technologies
-grew, interest in applying the underlying technology of the blockchain,
-distributed ledger and distributed application platform to more innovative
-_enterprise_ use cases also grew. However, many enterprise use cases require
-performance characteristics that the permissionless blockchain technologies are
-unable (presently) to deliver. In addition, in many use cases, the identity of
-the participants is a hard requirement, such as in the case of financial
-transactions where Know-Your-Customer (KYC) and Anti-Money Laundering (AML)
-regulations must be followed.
+비트코인의 인기로 이더리움과 다른 파생된 기술들도 발전되었고, 블록체인의 토대를
+이루는 기술사용에 대한 관심과, 분산 원장과 분산 애플리케이션 플랫폼을 더 
+혁신적인 _엔터프라이즈_ 사용 사례들에 활용하는 것에 대한 관심도 높아졌습니다. 
+하지만 많은 엔터프라이즈 사용 사례들은 허가가 필요없는 블록체인
+(permissionless blockchain) 기술들이 현재로서는 전달할 수 없는 성능 특성을
+(performance characteristics) 요구합니다. 게다가 Know-Your-Customer(KYC)와
+ Anti-Money Laundering(AML) 규칙들을 따라야 하는 많은 금융 거래들과 같은 
+ 사용 사례들에서는, 참여자들의 신원을 요구하는 것은 어렵습니다. 
 
-For enterprise use, we need to consider the following requirements:
+엔터프라이즈 용도로는, 우리는 다음과 같은 요구사항들을 고려해야 합니다.
 
-- Participants must be identified/identifiable
-- Networks need to be _permissioned_
-- High transaction throughput performance
-- Low latency of transaction confirmation
-- Privacy and confidentiality of transactions and data pertaining to business
-  transactions
+- 참여자들은 신원이 확인 되어야만 하거나 확인될 수 있어야 합니다
+- 네트워크들은 허가받아져야만 합니다
+- 높은 트랜잭션(high transaction) 처리를 할 수 있는 성능이 있어야 합니다
+- 트랜잭션을 확인하는 데 걸리는 시간이 짧아야 합니다
+- 프라이버시 트랜잭션과 비즈니스 트랜잭션이 관련된 데이터의 기밀성이 있어야 
+합니다
 
-While many early blockchain platforms are currently being _adapted_ for
-enterprise use, Hyperledger Fabric has been _designed_ for enterprise use from
-the outset. The following sections describe how Hyperledger Fabric (Fabric)
-differentiates itself from other blockchain platforms and describes some of the
-motivation for its architectural decisions.
+초기의 블록체인 플랫폼들이 현재 엔터프라이즈 용도에 맞게 _맞춰지는 것에_ 반해,
+ Hyperledger Fabric은 시작부터 엔터프라이즈 용도로 _디자인되었습니다_. 
+뒤에 나올 부분들이 어떻게 Hyperledger Fabric이 다른 블록체인 플랫폼들과 
+차별화하는지 그리고 그 아키텍처 결정에 대한 동기 중 몇몇을 설명할 것입니다.
 
 ## Hyperledger Fabric
 
