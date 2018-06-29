@@ -37,66 +37,65 @@
 뒤에 나올 부분들이 어떻게 Hyperledger Fabric이 다른 블록체인 플랫폼들과 
 차별화하는지 그리고 그 아키텍처 결정에 대한 동기 중 몇몇을 설명할 것입니다.
 
-## Hyperledger Fabric
+## 하이퍼레저 패브릭
 
-Hyperledger Fabric is an open source enterprise-grade permissioned distributed
-ledger technology (DLT) platform, designed for use in enterprise contexts,
-that delivers some key differentiating capabilities over other popular
-distributed ledger or blockchain platforms.
+Hyperledger Fabric은 엔터프라이즈 컨텍스트에서 사용할 수 있게 디자인된, 
+오픈소스 엔터프라이즈 수준의 허가형(permissioned) 분산 원장 기술(distributed 
+ledger technology, DLT) 플랫폼으로, 다른 유명한 분산 원장 또는 
+블록체인 플랫폼과 비교하여 차별화된 핵심 능력들을 제공합니다.
 
-One key point of differentiation is that Hyperledger was established under the
-Linux Foundation, which itself has a long and very successful history of
-nurturing open source projects under **open governance** that grow strong
-sustaining communities and thriving ecosystems. Hyperledger is governed by a
-diverse technical steering committee, and the Hyperledger Fabric project by a
-diverse set of maintainers from multiple organizations. It has a development
-community that has grown to over 35 organizations and nearly 200 developers
-since its earliest commits.
+차별화된 핵심적인 특징 중 하나는 Hyperledger는 끈끈하게 유지되는 커뮤니티들과
+번성하는 생태계를 자라게 하는 **오픈 거버넌스** 밑에서 오픈소스 프로젝트들을 
+양성하는데 있어 길고 굉장히 성공적인 역사를 가지고 있는 Linux Foundation 
+산하에서 설립되었다는 점입니다. Hyperledger는 다양한 기술적인 위원회와 여러 
+조직으부터 온 다양한 메인테이너들이 Hyperledger Fabric 프로젝트를 관리합니다.
+최초의 커밋 이래로 35개 이상의 조직과 거의 200명 정도되는 개발 커뮤니티로 
+발전했습니다. 
 
-Fabric has a highly **modular** and **configurable** architecture, enabling
-innovation, versatility and optimization for a broad range of industry use cases
-including banking, finance, insurance, healthcare, human resources, supply
-chain and even digital music delivery.
+Fabric은 은행과, 재정, 보험, 건강보험, 인사, 공급체인과 심지어는 디지털 음악 
+유통까지 포함하는 넓은 범위의 산업 활용 사례들을 위한 혁신과 다 기능성 및 
+최적화를 가능하게 하는 고도의 **모듈방식**과 **설정 가능**한 구조를 가지고 
+있습니다.
 
-Fabric is the first distributed ledger platform to support **smart contracts
-authored in general-purpose programming languages** such as Java, Go and
-Node.js, rather than constrained domain-specific languages (DSL). This means
-that most enterprises already have the skill set needed to develop smart
-contracts, and no additional training to learn a new language or DSL is needed.
+Fabric은 부자연스러운(constrained) 도메인 특화 언어(domain-specific languages, 
+DSL)보다는 Java나 Go 그리고 Node.js와 같은 **범용 프로그래밍 언어들로 작성할 수 
+있는 스마트 컨트랙트들을 지원**하는 최초의 분산 원장 플랫폼입니다. 이것이 뜻하는 
+바는 대개의 기업들은 이미 스마트 컨트랙트들을 개발하기 위해 필요한 기술을 가지고 
+있고 DSL이나 새로운 언어를 배우기 위한 훈련이 추가로 필요하지 않다는 것입니다.
 
-The Fabric platform is also **permissioned**, meaning that, unlike with a public
-permissionless network, the participants are known to each other, rather than
-anonymous and therefore fully untrusted. This means that while the participants
-may not _fully_ trust one another (they may, for example, be competitors in the
-same industry), a network can be operated under a governance model that is built
-off of what trust _does_ exist between participants, such as a legal agreement
-or framework for handling disputes.
+Fabric 플랫폼은 또한 **허가형(permissioned)**입니다. 그 말이 무슨 뜻이냐면 
+퍼블릭 무허가형 네트워크(public permissionless network)와는 다르게, 참가자들은 
+익명이라서 _완전히_ 신뢰받지 못하기보다는 서로를 알고 있습니다. 이 말인즉슨 
+참가자들은 서로를 완전히 믿지는 못하더라도 (예를 들면 같은 산업의 경쟁자일 수도 
+있습니다) 네트워크는 법적인 합의나 분쟁 해결을 위한 체제와 같이 참가자들 간의 
+신뢰에 의해 _기반_하여 구축된 거버넌스 모델에 의해 운영될 수 있습니다.
 
-One of the most important of the platform's differentiators is its support for
-**pluggable consensus protocols** that enable the platform to be more
-effectively customized to fit particular use cases and trust models. For
-instance, when deployed within a single enterprise, or operated by a trusted
-authority, fully byzantine fault tolerant consensus might be considered
-unnecessary and an excessive drag on performance and throughput. In situations
-such as that, a
+Fabric 플랫폼의 가장 중요한 차별점 중 하나는 특정한 활용 사례들과 트러스트 
+모델(trust models)에 효과적으로 쓰이도록 맞춰진 플랫폼이 될 수 있게 하는 
+**장착형 합의 프로토콜(pluggable consensus protocols)**을 지원한다는 점입니다.
+예를 들면 단일 엔터프라이즈 내에 배치되거나 신뢰할 수 있는 기관에 의해 운영 
+될때, 완전한 비잔틴 장애 허용 합의(fully byzantine fault tolerant consensus)는 
+불필요하다고 간주될 수 있고 성능 및 처리량에 과도한 부담이 될 수 있습니다. 
+그러한 상황들에서는 
 [crash fault-tolerant](https://en.wikipedia.org/wiki/Fault_tolerance) (CFT)
-consensus protocol might be more than adequate whereas, in a multi-party,
-decentralized use case, a more traditional
+합의 프로토콜은 적절한 반면, 멀티 파티(multi-party)이고 분산된 사용 사례에서는 
+전통적인 
 [byzantine fault tolerant](https://en.wikipedia.org/wiki/Byzantine_fault_tolerance)
-(BFT) consensus protocol might be required.
+(BFT) 합의 프로토콜이 요구될 수 있습니다.
 
-Fabric can leverage consensus protocols that **do not require a native
-cryptocurrency** to incent costly mining or to fuel smart contract execution.
-Avoidance of a cryptocurrency reduces some significant risk/attack vectors,
-and absence of cryptographic mining operations means that the platform can be
-deployed with roughly the same operational cost as any other distributed system.
+Fabric은 비싸게 채굴을 하거나 스마트 컨트랙트들을 실행하기 위해 보상금을 
+지불하기 위한 **자신만의 암호화폐(native cryptocurrency)를 필요로 하지 않는** 
+합의 프로토콜에게 영향력을 발휘할 수 있습니다.  암호화폐를 쓰지 않는 것은 상당한 
+risk/attack vectors를 감소시킵니다. 그리고 암호화 마이닝 작업이 없다는 점은 
+플랫폼이 다른 분산 시스템과 거의 동일한 운영 비용으로 플랫폼을 구축할 수 있음을 
+뜻합니다.
 
-The combination of these differentiating design features makes Fabric one of
-the **better performing platforms** available today both in terms of transaction
-processing and transaction confirmation latency, and it enables **privacy and confidentiality** of transactions and the smart contracts (what Fabric calls
-  "chaincode") that implement them.
+이러한 차별화된 설계 기능을 결합한 것이 Fabric을 트랜잭션 처리와 트랜잭션 확인 
+대기 시간 측면에서 **보다 우수한 성능의 플랫폼** 중 하나로 만들며, 그것이 
+**프라이버시**와 트랜잭션들과 그 트랜잭션들을 시행하는 스마트 트랜잭션들 
+(Fabric이 “체인코드"라고 부르는 것)의 **기밀성**을 가능하게 합니다.
 
-Let's explore these differentiating features in more detail.
+이 차별화된 특징들을 더 자세히 살펴보도록 하시죠.
 
 ## Modularity
 
