@@ -122,34 +122,29 @@ identity management protocols), 키 관리 프로토콜 혹은 암호화 라이�
 없다는 공정한 합의가 있습니다. Hyperledger Fabric은 여러 산업 분야에서 사용되는 
 다양한 솔루션 요구 사항을 충족시키기 위해 여러 가지 방법으로 구성될 수 있습니다.
 
-## Permissioned vs Permissionless Blockchains
+## 허가형 vs 무허가형 블록체인
 
-In a permissionless blockchain, virtually anyone can participate, and every
-participant is anonymous. In such a context, there can be no trust other than
-that the state of the blockchain, prior to a certain depth, is immutable. In
-order to mitigate this absence of trust, permissionless blockchains typically
-employ a "mined" native cryptocurrency or transaction fees to provide economic
-incentive to offset the extraordinary costs of participating in a form of
-byzantine fault tolerant consensus based on "proof of work" (PoW).
+허가형(permissionless) 블록체인에서는 사실상 어느 누구나 참여할 수 있고 모든 참여자가 익명입니다. 그런 맥락에서 블록체인의 상태가 일정한 깊이에 이르기 전에 
+불변하다는 것 외에 다른 어떤 신뢰도 있을 수 없습니다. 이러한 신뢰의 부재를 
+줄이기 위해 무허가형 블록체인들은 일반적으로 "Proof of work"(POW)를 기반으로 한 
+Byzantine fault tolerant consensus로 참여하기 위한 엄청난 비용을 상쇄하기 위한 
+경제적 보상금을 위해서 “채굴된" 자신만의 암호화폐 혹은 트랜잭션 수수료를 
+사용합니다. 
 
-**Permissioned** blockchains, on the other hand, operate a blockchain amongst
-a set of known, identified and often vetted participants operating under a
-governance model that yields a certain degree of trust. A permissioned
-blockchain provides a way to secure the interactions among a group of entities
-that have a common goal but which may not fully trust each other. By relying on
-the identities of the participants, a permissioned blockchain can use more
-traditional crash fault tolerant (CFT) or byzantine fault tolerant (BFT)
-consensus protocols that do not require costly mining.
+반면에 **허가형(permissioned)** 블록체인들은 일정 수준의 신뢰도를 가진 거버넌스 
+모델에 의해 운영되는 알려지고, 신원이 확인된, 자주 점검받는 참가자들 사이에서 
+블록체인을 운영합니다. 허가형 블록체인은 공통의 목표를 가지고 있지만 서로를 
+완전히 신뢰하지 못 할 수도 있는 엔티티 그룹 간의 상호작용을 보호하는 방법을 
+제공합니다. 참여자의 ID를 사용하여 허가형 블록체인은 값비싼 마이닝을 필요로 하지 
+않는 보다 전통적인 CFT(crash fault tolerant) 또는 BFT(byzantine fault tolerant) 
+합의 프로토콜을 사용할 수 있습니다. 
 
-Additionally, in such a permissioned context, the risk of a participant
-intentionally introducing malicious code through a smart contract is diminished.
-First, the participants are known to one another and all actions, whether
-submitting application transactions, modifying the configuration of the network
-or deploying a smart contract are recorded on the blockchain following an
-endorsement policy that was established for the network and relevant transaction
-type. Rather than being completely anonymous, the guilty party can be easily
-identified and the incident handled in accordance with the terms of the
-governance model.
+또한 이러한 허가된 컨텍스트에서 스마트 계약을 통해 의도적으로 악의적인 코드를 
+도입하는 참가자의 위험이 줄어급니다. 첫째, 참가자는 서로 알며 응용 프로그램 
+트랜잭션을 제출하거나 네트워크 구성을 수정하거나 스마트 계약을 배포하는 등 모든 
+작업이 네트워크 및 관련 트랜잭션 유형에 설정된 보증 정책에 따라 블록체인에 
+기록됩니다. 유죄가 입증된 당사자는 완전히 익명으로 처리되는 대신 쉽게 파악될 수 
+있으며 사건은 거버넌스 모델의 조건에 따라 처리됩니다.
 
 ## Smart Contracts
 
