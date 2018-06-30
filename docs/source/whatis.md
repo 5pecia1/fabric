@@ -146,47 +146,45 @@ Byzantine fault tolerant consensus로 참여하기 위한 엄청난 비용을 �
 기록됩니다. 유죄가 입증된 당사자는 완전히 익명으로 처리되는 대신 쉽게 파악될 수 
 있으며 사건은 거버넌스 모델의 조건에 따라 처리됩니다.
 
-## Smart Contracts
+## 스마트 컨트랙트
 
-A smart contract, or what Fabric calls "chaincode", functions as a trusted
-distributed application that gains its security/trust from the blockchain and
-the underlying consensus among the peers. It is the business logic of a
-blockchain application.
+스마트 컨트랙트 혹은 Fabric이 “chaincode”라고 부르는 것은 블록체인 및 
+피어(peers) 간의 기본적인 합의로부터 보안/신뢰를 얻는 신뢰할 수 있는 분산 
+애플리케이션으로서 기능합니다. 이것이 블록체인 애플리케이션의 비즈니스 
+로직입니다.
 
-There are three key points that apply to smart contracts, especially when
-applied to a platform:
+특히 플랫폼에 적용되었을때 스마트 컨트랙트들에 적용되는 세 가지 주요 사항은 
+다음과 같습니다.
 
-- many smart contracts run concurrently in the network,
-- they may be deployed dynamically (in many cases by anyone), and
-- application code should be treated as untrusted, potentially even
-malicious.
+- 많은 스마트 컨트랙트들이 네트워크에서 동시에 실행됩니다.
+- (많은 경우, 누구에서든지) 그것은 동적으로 배포될 수 있습니다 그리고
+- 애플리케이션 코드는 신뢰할 수 없고, 심지어 악의적이라고 간주되어야 합니다.
 
-Most existing smart-contract capable blockchain platforms follow an
-**order-execute** architecture in which the consensus protocol:
+기존의 스마트 컨트랙트 가능한 블록체인 플랫폼들 대부분은 합의 프로토콜인 
+**order-execute** 아키텍처를 따릅니다.
 
-- validates and orders transactions then propagates them to all peer nodes,
-- each peer then executes the transactions sequentially.
+- 트랜잭션들을 인증하고 주문한 후 모든 피어 노드들에게 그것들을 전파합니다.
+- 그 후, 각 피어는 트랜잭션들을 순차적으로 실행합니다.
 
-The order-execute architecture can be found in virtually all existing blockchain
-systems, ranging from public/permissionless platforms such as
-[Ethereum](https://ethereum.org/) (with PoW-based consensus) to permissioned
-platforms such as [Tendermint](http://tendermint.com/),
-[Chain](http://chain.com/), and [Quorum](http://www.jpmorgan.com/global/Quorum).
+order-execute 아키텍처는 [이더리움](https://ethereum.org/)(PoW-기반의 합의와 
+함께)과 같은 퍼블릭/무허가 플랫폼들부터 [Tendermint](http://tendermint.com/), 
+[Chain](http://chain.com/) 그리고 
+[Quorum](http://www.jpmorgan.com/global/Quorum)과 같은 허가된 플랫폼들에 
+이르기까지 사실상 모든 기존 블록체인 시스템들 안에서 찾을 수 있습니다.
 
-Smart contracts executing in a blockchain that operates with the order-execute
-architecture must be deterministic; otherwise, consensus might never be reached.
-To address the non-determinism issue, many platforms require that the smart
-contracts be written in a non-standard, or domain-specific language
-(such as [Solidity](https://solidity.readthedocs.io/en/v0.4.23/)) so that
-non-deterministic operations can be eliminated. This hinders wide-spread
-adoption because it requires developers writing smart contracts to learn a new
-language and may lead to programming errors.
+order-execute 아키텍쳐와 작동하는 블록체인 내에서 실행 되는 스마트 컨트랙트들은 
+결정적(deterministic)이어야 합니다. 그렇지 않으면 합의에 이르지 못할 수 
+있습니다. 비결정적 문제(non-determinism issue)를 해결하기 위해, 많은 플랫폼들은 
+스마트 컨트랙트들이 비결정적인(non-deterministic) 작업들이 제거될 수 있게 비표준 
+혹은 ([Solidity](https://solidity.readthedocs.io/en/v0.4.23/)와 같은) 도메인 특화(domain-specific) 언어로 쓰여지기를 
+요구합니다. 이점은 스마트 컨트랙트를 작성하는 개발자들이 새로운 언어를 배우게 
+요구하고 프로그래밍 에러를 유발할 수 있기 때문에 이것은 널리 채택 될 수 
+없습니다. 
 
-Further, since all transactions are executed sequentially by all nodes,
-performance and scale is limited. The fact that the smart contract code executes
-on every node in the system demands that complex measures be taken to protect
-the overall system from potentially malicious contracts in order to ensure
-resiliency of the overall system.
+또한 모든 트랜잭션이 모든 노드에 의해 순차적으로 실행되므로 성능 및 규모가 
+제한됩니다. 스마트 컨트랙트 코드가 시스템 내의 모든 노드들에 실행된다는 사실은 
+전체 시스템의 탄력성을 보장하기 위해 전체 시스템을 잠재적인 악성 
+컨트랙트들로부터 보호하기 위한 복잡한 조치가 취해 질 것을 요구합니다.
 
 ## A New Approach
 
