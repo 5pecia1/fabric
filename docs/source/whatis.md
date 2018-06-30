@@ -97,32 +97,30 @@ risk/attack vectors를 감소시킵니다. 그리고 암호화 마이닝 작업�
 
 이 차별화된 특징들을 더 자세히 살펴보도록 하시죠.
 
-## Modularity
+## 모듈성
 
-Hyperledger Fabric has been specifically architected to have a modular
-architecture. Whether it is pluggable consensus, pluggable identity management
-protocols such as LDAP or OpenID Connect, key management protocols or
-cryptographic libraries, the platform has been designed at its core to be
-configured to meet the diversity of enterprise use case requirements.
+Hyperledger Fabric은 모듈 방식 아키텍처를 갖도록 특별히 설계되었습니다. 장착형 
+합의이던가 LDAP나 OpenID Connect와 같은 장착형 신원 관리 프로토콜(pluggable 
+identity management protocols), 키 관리 프로토콜 혹은 암호화 라이브러리 
+이건 간에 플랫폼은 엔터프라이즈 사용 사례 요구 사항의 다양성을 충족하고 
+구성되도록 설계되었습니다.
 
-At a high level, Fabric is comprised of the following modular components:
+높은 수준에서는 Fabric은 다음과 같은 모듈러 요소들로 구성되어 있습니다.
 
-- A pluggable _ordering service_ establishes consensus on the order of
-transactions and then broadcasts blocks to peers.
-- A pluggable _membership service provider_ is responsible for associating
-entities in the network with cryptographic identities.
-- An optional _peer-to-peer gossip service_ disseminates the blocks output by
-ordering service to other peers.
-- Smart contracts ("chaincode") run within a container environment (e.g. Docker)
-for isolation. They can be written in standard programming languages but do not
-have direct access to the ledger state.
-- The ledger can be configured to support a variety of DBMSs.
-- A pluggable endorsement and validation policy enforcement that can be
-independently configured per application.
+- 장착형 _ordering service_는 트랜잭션 순서에 대한 합의를 확립한 다음 블록을 피어들에게 브로드 캐스트 합니다.
+- 장착형 _membership service provider_는 네트워크의 
+엔티티들을 암호화 신원(cryptographic Identities)과 연관시키는 역할을 담당합니다.
+- 부가적인 _peer-to-peer gossip service_는 ordering service에 의해 다른 피어에게 
+블록을 전파합니다.
+- 스마트 컨트렉트들("chaincode")은 컨테이너 환경 (예:Docker) 내에서 격리되어 실행됩니다. 표준 프로그래밍 언어로 작성될 수 있지만 원장 상태에 직접 액세스할 
+수는 없습니다.
+- 원장은 다양한 DBMS를 지원하도록 구성할 수 있다.
+- 애플리케이션별로 독립적으로 구성할 수 있는 장착형(pluggable) endorsement와 인증 
+정책이 있습니다.
 
-There is fair agreement in the industry that there is no "one blockchain to
-rule them all". Hyperledger Fabric can be configured in multiple ways to
-satisfy the diverse solution requirements for multiple industry use cases.
+산업에는 "다른 블록체인들보다 훨씬 뛰어난/모두를 지배하는 하나의 블록 체인"은 
+없다는 공정한 합의가 있습니다. Hyperledger Fabric은 여러 산업 분야에서 사용되는 
+다양한 솔루션 요구 사항을 충족시키기 위해 여러 가지 방법으로 구성될 수 있습니다.
 
 ## Permissioned vs Permissionless Blockchains
 
