@@ -16,6 +16,7 @@
    :maxdepth: 1
 
    whatis
+   whatsnew
    getting_started
    key_concepts
    tutorials
